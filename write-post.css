@@ -48,7 +48,7 @@
 }
 
 .form-title {
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 700;
     color: #000000;
     margin-bottom: 30px;
@@ -136,7 +136,7 @@
 .submit-btn {
     background-color: #4a9b8e;
     color: #ffffff;
-    min-width: 180px;
+    min-width: 130px;
     max-width: 200px;
 }
 
@@ -153,6 +153,7 @@
 .reset-btn {
     background-color: #666666;
     color: #ffffff;
+    max-width: 200px;
 }
 
 .reset-btn:hover {
@@ -231,13 +232,10 @@
         grid-template-columns: 1fr;
     }
 
-    .form-actions {
-        flex-direction: column;
-    }
-
     .submit-btn,
     .reset-btn {
-        width: 100%;
+        min-width: 130px;
+        max-width: 160px;
     }
 }
 
@@ -249,6 +247,11 @@
     .form-group input,
     .form-group textarea {
         font-size: 14px;
+    }
+    .submit-btn,
+    .reset-btn {
+        min-width: 120px;
+        max-width: 150px;
     }
 }
 

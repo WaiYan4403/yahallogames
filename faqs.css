@@ -31,6 +31,7 @@
     color: #000000;
     margin-bottom: 12px;
     line-height: 1.4;
+    text-align: justify;
 }
 
 .faq-answer {
@@ -38,6 +39,7 @@
     color: #333333;
     line-height: 1.8;
     margin: 0;
+    text-align: justify;
 }
 
 /* Responsive Design for FAQs Page */
