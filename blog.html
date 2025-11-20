@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="blog.css">
 </head>
 <body>
+    <script>
+        if (location.protocol === 'http:' && location.hostname === 'yahallogames.site') {
+            location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
+        }
+    </script>
     <div class="blog-container">
         <!-- Home Button -->
         <a href="index.html" class="home-btn">

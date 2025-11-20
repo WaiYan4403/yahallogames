@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script>
+        if (location.protocol === 'http:' && location.hostname === 'yahallogames.site') {
+            location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
+        }
+    </script>
     <div class="container">
         <!-- Logo -->
         <header class="logo-section">
