@@ -1,5 +1,4 @@
-// API Base URL - Change this to your server URL
-const API_BASE_URL = 'http://localhost:3000/api';
+// API Base URL is loaded from api-config.js
 
 // Get post ID from URL
 function getPostId() {
