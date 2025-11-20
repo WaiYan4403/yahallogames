@@ -82,6 +82,13 @@
     text-align: justify;
 }
 
+.profile-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 15px;
+    text-align: center;
+}
 /* Responsive Design for About Us Page */
 @media (max-width: 768px) {
     .about-card {
