@@ -1,4 +1,5 @@
 // API Base URL is loaded from api-config.js
+// API_BASE_URL is defined in api-config.js as a global variable
 
 // Get current page from URL or default to 1
 function getCurrentPage() {
@@ -85,22 +86,39 @@ async function loadBlogPosts() {
     const container = document.getElementById('blogPostsContainer');
     const paginationContainer = document.getElementById('pagination');
     
+    if (typeof API_BASE_URL === 'undefined') {
+        container.innerHTML = '<p style="color: #ff6b6b; text-align: center;">Configuration error: API URL not defined.</p>';
+        console.error('API_BASE_URL is undefined');
+        return;
+    }
+    
     try {
         container.innerHTML = '<p style="color: #fff; text-align: center;">Loading...</p>';
         
-        const response = await fetch(`${API_BASE_URL}/posts?page=${currentPage}&limit=10`);
+        const url = `${API_BASE_URL}/posts?page=${currentPage}&limit=10`;
+        console.log('Fetching from:', url);
+        
+        const response = await fetch(url);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const data = await response.json();
+        console.log('Received data:', data);
         
         if (data.posts && data.posts.length > 0) {
             container.innerHTML = data.posts.map(post => renderBlogPost(post, currentPage)).join('');
-            paginationContainer.innerHTML = renderPagination(data.pagination);
+            if (data.pagination) {
+                paginationContainer.innerHTML = renderPagination(data.pagination);
+            }
         } else {
             container.innerHTML = '<p style="color: #fff; text-align: center;">No blog posts found.</p>';
             paginationContainer.innerHTML = '';
         }
     } catch (error) {
         console.error('Error loading blog posts:', error);
-        container.innerHTML = '<p style="color: #ff6b6b; text-align: center;">Error loading blog posts. Make sure the server is running.</p>';
+        container.innerHTML = `<p style="color: #ff6b6b; text-align: center;">Error loading blog posts: ${error.message}</p>`;
         paginationContainer.innerHTML = '';
     }
 }
