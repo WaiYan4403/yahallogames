@@ -3,6 +3,12 @@
 const form = document.getElementById('postForm');
 const messageDiv = document.getElementById('message');
 const resetBtn = document.getElementById('resetBtn');
+const authorInput = document.getElementById('author');
+const categoryInput = document.getElementById('category');
+const publishedAtInput = document.getElementById('publishedAt');
+
+const DEFAULT_AUTHOR = authorInput ? (authorInput.value || 'Tomo') : 'Tomo';
+const DEFAULT_CATEGORY = categoryInput ? (categoryInput.value || "Grandma's Little Store") : "Grandma's Little Store";
 
 function showMessage(text, type) {
     messageDiv.textContent = text;
@@ -29,6 +35,15 @@ function formatDateForInput(date) {
     return `${year}-${month}-${day}`;
 }
 
+function setPublishedDateToToday() {
+    if (!publishedAtInput) return;
+    publishedAtInput.value = formatDateForInput(new Date());
+}
+
+if (publishedAtInput && !publishedAtInput.value) {
+    setPublishedDateToToday();
+}
+
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     hideMessage();
@@ -42,8 +57,8 @@ form.addEventListener('submit', async (e) => {
         const formData = new FormData(form);
         const data = {
             title: formData.get('title'),
-            author: formData.get('author') || 'Tomo',
-            category: formData.get('category') || "Grandma's Little Store",
+            author: formData.get('author') || DEFAULT_AUTHOR,
+            category: formData.get('category') || DEFAULT_CATEGORY,
             content: formData.get('content'),
             excerpt: formData.get('excerpt') || '',
             publishedAt: formData.get('publishedAt') || null
@@ -62,8 +77,9 @@ form.addEventListener('submit', async (e) => {
         if (response.ok) {
             showMessage('Post published successfully!', 'success');
             form.reset();
-            document.getElementById('author').value = 'Tomo';
-            document.getElementById('category').value = "Grandma's Little Store";
+            if (authorInput) authorInput.value = DEFAULT_AUTHOR;
+            if (categoryInput) categoryInput.value = DEFAULT_CATEGORY;
+            setPublishedDateToToday();
             
             setTimeout(() => {
                 window.location.href = 'blog.html';
@@ -83,8 +99,9 @@ form.addEventListener('submit', async (e) => {
 resetBtn.addEventListener('click', () => {
     if (confirm('Are you sure you want to reset the form? All unsaved changes will be lost.')) {
         form.reset();
-        document.getElementById('author').value = 'Tomo';
-        document.getElementById('category').value = "Grandma's Little Store";
+        if (authorInput) authorInput.value = DEFAULT_AUTHOR;
+        if (categoryInput) categoryInput.value = DEFAULT_CATEGORY;
+        setPublishedDateToToday();
         hideMessage();
     }
 });
