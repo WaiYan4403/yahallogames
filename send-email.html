@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Email to Subscribers - Yahallo Games</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="fontawesome-free-7.1.0-web/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="write-post.css">
+</head>
+<body>
+    <script>
+        if (location.protocol === 'http:' && location.hostname === 'yahallogames.site') {
+            location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
+        }
+    </script>
+    <div class="write-post-container">
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+            <a href="manage-posts.html" class="nav-btn">
+                <i class="fa-solid fa-cog"></i>
+                Manage Posts
+            </a>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <h1 class="form-title">Send Email to Subscribers</h1>
+            
+            <!-- Subscriber Count -->
+            <div id="subscriberInfo" class="subscriber-info">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                <span>Loading subscriber count...</span>
+            </div>
+
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Email subject">
+                </div>
+
+                <div class="form-group">
+                    <label for="emailMessage">Message *</label>
+                    <textarea id="emailMessage" name="message" rows="15" required placeholder="Write your email message here..."></textarea>
+                    <small>Line breaks will be preserved in the email</small>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Send Email
+                    </button>
+                    <button type="button" class="reset-btn" id="resetBtn">
+                        <i class="fa-solid fa-rotate"></i>
+                        Clear Form
+                    </button>
+                </div>
+            </form>
+
+            <!-- Message Display -->
+            <div id="messageDiv" class="message"></div>
+        </div>
+    </div>
+
+    <script src="api-config.js"></script>
+    <script src="send-email.js"></script>
+</body>
+</html>
+

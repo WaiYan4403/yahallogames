@@ -117,6 +117,123 @@ body {
     font-size: 1rem;
 }
 
+/* Mailing List Section */
+.mailing-list-section {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.mailing-list-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.mailing-list-subtitle {
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+.mailing-list-form {
+    width: 100%;
+}
+
+.mailing-list-input-group {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+}
+
+.mailing-list-input {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.mailing-list-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mailing-list-input:focus {
+    outline: none;
+    border-color: #4a9b8e;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.mailing-list-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: #4a9b8e;
+    color: #ffffff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: inherit;
+    white-space: nowrap;
+}
+
+.mailing-list-btn:hover {
+    background-color: #3d8277;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(74, 155, 142, 0.3);
+}
+
+.mailing-list-btn:active {
+    transform: translateY(0);
+}
+
+.mailing-list-btn:disabled {
+    background-color: #666666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.mailing-list-btn:disabled:hover {
+    box-shadow: none;
+}
+
+.mailing-list-message {
+    margin-top: 15px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    display: none;
+}
+
+.mailing-list-message.success {
+    display: block;
+    background-color: rgba(212, 237, 218, 0.2);
+    color: #d4edda;
+    border: 1px solid rgba(195, 230, 203, 0.3);
+}
+
+.mailing-list-message.error {
+    display: block;
+    background-color: rgba(248, 215, 218, 0.2);
+    color: #f8d7da;
+    border: 1px solid rgba(245, 198, 203, 0.3);
+}
+
 /* Social Icons */
 .social-icons {
     display: flex;
@@ -185,6 +302,15 @@ body {
         width: 100%;
         max-width: 350px;
     }
+
+    .mailing-list-input-group {
+        flex-direction: column;
+    }
+
+    .mailing-list-btn {
+        width: 100%;
+    }
+
     .social-icon {
         width: 40px;
         height: 40px;

@@ -27,7 +27,7 @@
         <!-- Game Thumbnails Grid -->
         <section class="games-grid">
             <div class="game-card">
-                <a href="">
+                <a href="https://store.steampowered.com/app/4205320/Grandmas_Little_Store/">
                 <img src="Images/Grandma'sLittleStore.png" alt="Grandma's Little Store"></a>
 
             </div>
@@ -67,6 +67,29 @@
             </a>
         </section>
 
+        <!-- Mailing List -->
+        <section class="mailing-list-section">
+            <h2 class="mailing-list-title">Stay Updated</h2>
+            <p class="mailing-list-subtitle">Subscribe to our mailing list for game updates and news</p>
+            <form id="mailingListForm" class="mailing-list-form">
+                <div class="mailing-list-input-group">
+                    <input 
+                        type="email" 
+                        id="emailInput" 
+                        name="email" 
+                        placeholder="Enter your email address" 
+                        required
+                        class="mailing-list-input"
+                    >
+                    <button type="submit" class="mailing-list-btn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Subscribe
+                    </button>
+                </div>
+                <div id="mailingListMessage" class="mailing-list-message"></div>
+            </form>
+        </section>
+
         <!-- Social Media Icons -->
         <footer class="social-icons">
             <!-- <a href="https://www.facebook.com/share/16cPmTjp3e/" class="social-icon" aria-label="Facebook">
@@ -81,7 +104,7 @@
             <a href="https://play.google.com/store/apps/dev?id=5433877889174746171" class="social-icon" aria-label="Store">
                 <i class="fa-brands fa-google-play"></i>
             </a>
-            <a href="#" class="social-icon" aria-label="Store">
+            <a href="https://store.steampowered.com/app/4205320/Grandmas_Little_Store/" class="social-icon" aria-label="Store">
                 <i class="fa-brands fa-steam"></i>
             </a>
             <!-- <a href="https://www.tiktok.com/@tomo_the_artist" class="social-icon" aria-label="TikTok">
@@ -89,6 +112,9 @@
             </a>-->
         </footer>
     </div>
+
+    <script src="api-config.js"></script>
+    <script src="mailing-list.js"></script>
 </body>
 </html>
 
