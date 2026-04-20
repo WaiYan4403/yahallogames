@@ -1,0 +1,151 @@
+/* About Us Page Styles */
+.support-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.support-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.payments-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.payment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0; /* remove vertical push */
+}
+
+.profile-image {
+    width: 150px;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.profile-social-icons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.profile-social-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.profile-social-icon:hover {
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+.profile-social-icon i {
+    font-size: 16px;
+}
+
+.support-description {
+    color: #333333;
+    line-height: 1.8;
+    font-size: 16px;
+    text-align: left;
+    margin: 0;
+    text-align: justify;
+}
+
+.profile-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 15px;
+    text-align: center;
+}
+/* Responsive Design for Support Page */
+@media (max-width: 768px) {
+    .support-card {
+        padding: 30px 20px;
+    }
+
+    .support-title {
+        font-size: 28px;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-name {
+        font-size: 18px;
+    }
+
+    .support-description {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .support-card {
+        padding: 25px 15px;
+    }
+
+    .support-title {
+        font-size: 24px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-name {
+        font-size: 16px;
+    }
+
+    .profile-social-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .profile-social-icon i {
+        font-size: 14px;
+    }
+
+    .support-description {
+        font-size: 14px;
+    }
+}
+
