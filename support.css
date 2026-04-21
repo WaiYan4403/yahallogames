@@ -3,54 +3,69 @@
     background-color: #ffffff;
     border-radius: 12px;
     padding: 40px;
-    margin-bottom: 30px;
+    margin: 30px auto;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
+/* Title */
 .support-title {
     font-size: 32px;
     font-weight: 700;
-    color: #000000;
+    color: #000;
     margin-bottom: 30px;
     text-align: left;
 }
 
+/* Payments Section */
 .payments-section {
     display: flex;
     align-items: center;
-    gap: 20px;
-    flex-wrap: nowrap;
     justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* ✅ allow wrapping */
 }
 
+/* Individual Profile */
 .payment-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 0; /* remove vertical push */
+    flex: 1 1 200px; /* ✅ responsive sizing */
+    max-width: 250px;
 }
 
+/* Profile Image */
 .profile-image {
     width: 120px;
-    height: 100%;
+    height: 120px; /* ✅ fixed square */
     object-fit: cover;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
 }
 
+/* Name */
 .profile-name {
     font-size: 20px;
     font-weight: 600;
-    color: #000000;
-    margin-bottom: 15px;
+    color: #000;
+    margin-bottom: 10px;
     text-align: center;
 }
 
+/* Title */
+.profile-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+/* Social Icons */
 .profile-social-icons {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     justify-content: center;
     margin-bottom: 10px;
 }
@@ -58,18 +73,19 @@
 .profile-social-icon {
     width: 40px;
     height: 40px;
-    background-color: #ffffff;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #000000;
+    color: #000;
     text-decoration: none;
     transition: all 0.3s ease;
+    border-radius: 8px;
 }
 
 .profile-social-icon:hover {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: #000;
+    color: #fff;
     transform: scale(1.1);
 }
 
@@ -77,35 +93,38 @@
     font-size: 16px;
 }
 
+/* Description */
 .support-description {
-    color: #333333;
-    line-height: 1.8;
+    color: #333;
+    line-height: 1.7;
     font-size: 16px;
-    text-align: left;
-    margin: 0;
     text-align: justify;
 }
 
-.profile-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #000000;
-    margin-bottom: 15px;
-    text-align: center;
-}
-/* Responsive Design for Support Page */
+/* ===================== */
+/* Tablet (≤ 768px) */
+/* ===================== */
 @media (max-width: 768px) {
     .support-card {
         padding: 30px 20px;
     }
 
     .support-title {
-        font-size: 28px;
+        font-size: 26px;
+        text-align: center; /* better for tablet */
+    }
+
+    .payments-section {
+        gap: 20px;
+    }
+
+    .payment-section {
+        flex: 1 1 45%; /* 2 columns */
     }
 
     .profile-image {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
 
     .profile-name {
@@ -117,18 +136,32 @@
     }
 }
 
+/* ===================== */
+/* Mobile (≤ 480px) */
+/* ===================== */
 @media (max-width: 480px) {
     .support-card {
-        padding: 25px 15px;
+        padding: 20px 15px;
     }
 
     .support-title {
-        font-size: 24px;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .payments-section {
+        flex-direction: column; /* ✅ stack vertically */
+        gap: 25px;
+    }
+
+    .payment-section {
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
     .profile-image {
-        width: 100px;
-        height: 100px;
+        width: 90px;
+        height: 90px;
     }
 
     .profile-name {
@@ -148,4 +181,3 @@
         font-size: 14px;
     }
 }
-
