@@ -26,6 +26,33 @@
     flex-wrap: wrap; /* ✅ allow wrapping */
 }
 
+.buy-tea-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #8b4513, #b75a1a);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 6px 14px rgba(139, 69, 19, 0.25);
+}
+
+.buy-tea-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+    box-shadow: 0 8px 18px rgba(139, 69, 19, 0.3);
+}
+
+.buy-tea-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
 /* Individual Profile */
 .payment-section {
     display: flex;
