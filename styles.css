@@ -137,14 +137,10 @@ body {
     line-height: 1.5;
 }
 
-/* Featured Game */
-.featured-section {
+/* Featured Games Carousel */
+.featured-carousel {
     width: 100%;
     max-width: 780px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
     background: linear-gradient(120deg, rgba(74, 155, 142, 0.22), rgba(255, 255, 255, 0.06));
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 14px;
@@ -152,11 +148,50 @@ body {
 }
 
 .featured-label {
+    display: inline-block;
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #cdece7;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
+}
+
+.featured-track {
+    position: relative;
+    min-height: 120px;
+}
+
+.featured-slide {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+}
+
+.featured-slide.is-active {
+    display: flex;
+}
+
+.featured-body {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 14px;
+    align-items: center;
+}
+
+.featured-media {
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.featured-media img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    object-position: center;
+    display: block;
 }
 
 .featured-content h2 {
@@ -182,6 +217,7 @@ body {
     font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
+    align-self: flex-start;
 }
 
 .featured-cta:hover {
@@ -191,6 +227,57 @@ body {
 .featured-cta:focus-visible {
     outline: 3px solid #4a9b8e;
     outline-offset: 2px;
+}
+
+.featured-controls {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.carousel-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.carousel-btn:focus-visible,
+.carousel-dot:focus-visible {
+    outline: 3px solid #4a9b8e;
+    outline-offset: 2px;
+}
+
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+}
+
+.carousel-dot.is-active {
+    width: 20px;
+    background: #ffffff;
 }
 
 /* Action Buttons */
@@ -437,9 +524,18 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .featured-section {
-        flex-direction: column;
-        align-items: flex-start;
+    .featured-track {
+        min-height: 190px;
+    }
+
+    .featured-body {
+        grid-template-columns: 1fr;
+        align-items: stretch;
+    }
+
+    .featured-cta {
+        width: 100%;
+        justify-content: center;
     }
 }
 

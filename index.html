@@ -73,6 +73,7 @@
         <header class="logo-section">
             <img src="Images/YahalloGamesLogo.png" alt="Yahallo Games Logo" class="logo" loading="eager" fetchpriority="high" decoding="async">
         </header>
+        <p>We create cozy, story-driven, and simulation games.</p>
 
         <!-- Game Thumbnails Grid -->
         <section class="games-grid">
@@ -111,11 +112,10 @@
         </section>
 
         <section class="proof-section" aria-label="Studio trust signals">
-            <h2 class="proof-title">Why Players Follow Yahallo Games</h2>
             <div class="proof-grid">
                 <article class="proof-card">
                     <i class="fa-solid fa-gamepad"></i>
-                    <h3>4 Published Titles</h3>
+                    <h3>10+ Published Titles</h3>
                     <p>From cozy simulations to story-driven adventures.</p>
                 </article>
                 <article class="proof-card">
@@ -131,16 +131,89 @@
             </div>
         </section>
 
-        <section class="featured-section" aria-label="Featured title">
-            <div class="featured-content">
-                <p class="featured-label">Featured Game</p>
-                <h2>Grandma's Little Store</h2>
-                <p>Build your dream neighborhood shop in a warm, story-rich simulation experience.</p>
+        <section class="featured-carousel" id="featuredCarousel" data-autoplay-ms="5000" aria-label="Featured games carousel">
+            <p class="featured-label">Featured Games</p>
+
+            <div class="featured-track" id="featuredTrack">
+                <article class="featured-slide is-active" data-index="0" aria-hidden="false">
+                    <div class="featured-body">
+                        <div class="featured-media">
+                            <img src="Images/Grandma'sLittleStore.png" alt="Grandma's Little Store cover art" loading="lazy" decoding="async">
+                        </div>
+                        <div class="featured-content">
+                            <h2>Grandma's Little Store</h2>
+                            <p>Build your dream neighborhood shop in a warm, story-rich simulation experience.</p>
+                        </div>
+                    </div>
+                    <a href="https://store.steampowered.com/app/4205320/Grandmas_Little_Store/" class="featured-cta" target="_blank" rel="noopener noreferrer" data-track="featured_game_click" data-game="grandmas_little_store" data-platform="steam">
+                        <i class="fa-brands fa-steam"></i>
+                        View on Steam
+                    </a>
+                </article>
+
+                <article class="featured-slide" data-index="1" aria-hidden="true">
+                    <div class="featured-body">
+                        <div class="featured-media">
+                            <img src="Images/WorkTogether.png" alt="Work Together cover art" loading="lazy" decoding="async">
+                        </div>
+                        <div class="featured-content">
+                            <h2>Work Together</h2>
+                            <p>A co-op challenge designed for coordination, timing, and shared problem-solving.</p>
+                        </div>
+                    </div>
+                    <a href="https://yahallogames.itch.io/work-together" class="featured-cta" target="_blank" rel="noopener noreferrer" data-track="featured_game_click" data-game="work_together" data-platform="itch">
+                        <i class="fa-brands fa-itch-io"></i>
+                        Play on Itch.io
+                    </a>
+                </article>
+
+                <article class="featured-slide" data-index="2" aria-hidden="true">
+                    <div class="featured-body">
+                        <div class="featured-media">
+                            <img src="Images/ShadowTales.png" alt="Shadow Tales cover art" loading="lazy" decoding="async">
+                        </div>
+                        <div class="featured-content">
+                            <h2>Shadow Tales</h2>
+                            <p>Explore a mysterious world with story-first progression and emotional atmosphere.</p>
+                        </div>
+                    </div>
+                    <a href="https://yahallogames.itch.io/shadowtales-theforgottenmemories" class="featured-cta" target="_blank" rel="noopener noreferrer" data-track="featured_game_click" data-game="shadow_tales" data-platform="itch">
+                        <i class="fa-brands fa-itch-io"></i>
+                        View on Itch.io
+                    </a>
+                </article>
+
+                <article class="featured-slide" data-index="3" aria-hidden="true">
+                    <div class="featured-body">
+                        <div class="featured-media">
+                            <img src="Images/Desktop-Capybara.png" alt="Desktop Capybaras cover art" loading="lazy" decoding="async">
+                        </div>
+                        <div class="featured-content">
+                            <h2>Desktop Capybaras</h2>
+                            <p>A calm desktop companion experience for players who enjoy soft ambient interaction.</p>
+                        </div>
+                    </div>
+                    <a href="https://yahallogames.itch.io/desktop-capybaras" class="featured-cta" target="_blank" rel="noopener noreferrer" data-track="featured_game_click" data-game="desktop_capybaras" data-platform="itch">
+                        <i class="fa-brands fa-itch-io"></i>
+                        View on Itch.io
+                    </a>
+                </article>
             </div>
-            <a href="https://store.steampowered.com/app/4205320/Grandmas_Little_Store/" class="featured-cta" target="_blank" rel="noopener noreferrer" data-track="featured_game_click" data-game="grandmas_little_store" data-platform="steam">
-                <i class="fa-brands fa-steam"></i>
-                View on Steam
-            </a>
+
+            <div class="featured-controls">
+                <button type="button" class="carousel-btn" id="featuredPrev" aria-label="Previous featured game">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="carousel-dots" id="featuredDots" role="tablist" aria-label="Featured game slides">
+                    <button type="button" class="carousel-dot is-active" data-slide="0" aria-label="Show featured game 1" aria-current="true"></button>
+                    <button type="button" class="carousel-dot" data-slide="1" aria-label="Show featured game 2" aria-current="false"></button>
+                    <button type="button" class="carousel-dot" data-slide="2" aria-label="Show featured game 3" aria-current="false"></button>
+                    <button type="button" class="carousel-dot" data-slide="3" aria-label="Show featured game 4" aria-current="false"></button>
+                </div>
+                <button type="button" class="carousel-btn" id="featuredNext" aria-label="Next featured game">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
         </section>
 
         <!-- Action Buttons -->
@@ -171,7 +244,6 @@
             </a>
         </section>
 
-        <p>Play our games here ⬇️</p>
         <!-- Social Media Icons -->
         <footer class="social-icons">
             <!-- <a href="https://www.facebook.com/share/16cPmTjp3e/" class="social-icon" aria-label="Facebook">
@@ -226,6 +298,7 @@
 
     <script src="api-config.js"></script>
     <script src="mailing-list.js"></script>
+    <script src="featured-carousel.js"></script>
 </body>
 </html>
 
