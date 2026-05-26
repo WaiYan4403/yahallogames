@@ -5,6 +5,12 @@ const messageDiv = document.getElementById('messageDiv');
 const resetBtn = document.getElementById('resetBtn');
 const subscriberInfo = document.getElementById('subscriberInfo');
 
+try {
+    ensureAdminAuth();
+} catch (error) {
+    console.error(error.message);
+}
+
 function showMessage(text, type) {
     messageDiv.textContent = text;
     messageDiv.className = `message ${type}`;
@@ -23,8 +29,15 @@ function hideMessage() {
 
 async function loadSubscriberCount() {
     try {
-        const response = await fetch(`${API_BASE_URL}/mailing-list/subscribers`);
+        const response = await fetch(`${API_BASE_URL}/mailing-list/subscribers`, {
+            headers: getAdminHeaders()
+        });
         const data = await response.json();
+
+        if (response.status === 401) {
+            handleAdminUnauthorized();
+            return;
+        }
 
         if (response.ok) {
             subscriberInfo.innerHTML = `
@@ -67,9 +80,9 @@ form.addEventListener('submit', async (e) => {
 
         const response = await fetch(`${API_BASE_URL}/mailing-list/send-email`, {
             method: 'POST',
-            headers: {
+            headers: getAdminHeaders({
                 'Content-Type': 'application/json'
-            },
+            }),
             body: JSON.stringify(data),
             signal: controller.signal
         });
@@ -77,6 +90,11 @@ form.addEventListener('submit', async (e) => {
         clearTimeout(timeoutId);
 
         const result = await response.json();
+
+        if (response.status === 401) {
+            handleAdminUnauthorized();
+            return;
+        }
 
         if (response.ok) {
             showMessage(`Success! ${result.message}`, 'success');

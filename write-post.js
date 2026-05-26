@@ -7,6 +7,12 @@ const authorInput = document.getElementById('author');
 const categoryInput = document.getElementById('category');
 const publishedAtInput = document.getElementById('publishedAt');
 
+try {
+    ensureAdminAuth();
+} catch (error) {
+    console.error(error.message);
+}
+
 const DEFAULT_AUTHOR = authorInput ? (authorInput.value || 'Tomo') : 'Tomo';
 const DEFAULT_CATEGORY = categoryInput ? (categoryInput.value || "Grandma's Little Store") : "Grandma's Little Store";
 
@@ -66,13 +72,18 @@ form.addEventListener('submit', async (e) => {
 
         const response = await fetch(`${API_BASE_URL}/posts`, {
             method: 'POST',
-            headers: {
+            headers: getAdminHeaders({
                 'Content-Type': 'application/json'
-            },
+            }),
             body: JSON.stringify(data)
         });
 
         const result = await response.json();
+
+        if (response.status === 401) {
+            handleAdminUnauthorized();
+            return;
+        }
 
         if (response.ok) {
             showMessage('Post published successfully!', 'success');

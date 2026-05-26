@@ -5,6 +5,12 @@ const loading = document.getElementById('loading');
 const emptyState = document.getElementById('emptyState');
 const messageDiv = document.getElementById('message');
 
+try {
+    ensureAdminAuth();
+} catch (error) {
+    console.error(error.message);
+}
+
 function showMessage(text, type) {
     messageDiv.textContent = text;
     messageDiv.className = `message ${type}`;
@@ -91,8 +97,15 @@ async function loadPosts() {
         postsList.innerHTML = '';
         emptyState.style.display = 'none';
 
-        const response = await fetch(`${API_BASE_URL}/posts/manage/all`);
+        const response = await fetch(`${API_BASE_URL}/posts/manage/all`, {
+            headers: getAdminHeaders()
+        });
         const data = await response.json();
+
+        if (response.status === 401) {
+            handleAdminUnauthorized();
+            return;
+        }
 
         if (response.ok && data.posts && data.posts.length > 0) {
             postsList.innerHTML = data.posts.map(post => renderPost(post)).join('');
@@ -115,10 +128,16 @@ async function deletePost(id, title) {
 
     try {
         const response = await fetch(`${API_BASE_URL}/posts/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers: getAdminHeaders()
         });
 
         const data = await response.json();
+
+        if (response.status === 401) {
+            handleAdminUnauthorized();
+            return;
+        }
 
         if (response.ok) {
             showMessage('Post deleted successfully!', 'success');

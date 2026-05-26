@@ -94,6 +94,105 @@ body {
     color: #cfcfcf;
 }
 
+/* Social Proof */
+.proof-section {
+    width: 100%;
+    max-width: 780px;
+}
+
+.proof-title {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.proof-card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+}
+
+.proof-card i {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #4a9b8e;
+}
+
+.proof-card h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.proof-card p {
+    font-size: 12px;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+/* Featured Game */
+.featured-section {
+    width: 100%;
+    max-width: 780px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    background: linear-gradient(120deg, rgba(74, 155, 142, 0.22), rgba(255, 255, 255, 0.06));
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.featured-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #cdece7;
+    margin-bottom: 4px;
+}
+
+.featured-content h2 {
+    font-size: 22px;
+    margin-bottom: 6px;
+}
+
+.featured-content p {
+    font-size: 14px;
+    color: #e8e8e8;
+    line-height: 1.5;
+}
+
+.featured-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 11px 16px;
+    background: #ffffff;
+    color: #111111;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.featured-cta:hover {
+    background: #f0f0f0;
+}
+
+.featured-cta:focus-visible {
+    outline: 3px solid #4a9b8e;
+    outline-offset: 2px;
+}
+
 /* Action Buttons */
 .action-buttons {
     display: flex;
@@ -332,6 +431,15 @@ body {
         gap: 0px;
         width: 100%;
         max-width: 400px;
+    }
+
+    .proof-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-section {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 

@@ -1,0 +1,118 @@
+/* Press Kit Page Styles */
+.press-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 36px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.press-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+.press-subtitle {
+    color: #555555;
+    margin-bottom: 24px;
+}
+
+.press-section {
+    margin-bottom: 24px;
+}
+
+.press-section h2 {
+    font-size: 22px;
+    color: #111111;
+    margin-bottom: 10px;
+}
+
+.press-section p,
+.press-section li {
+    color: #333333;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.press-section ul {
+    padding-left: 20px;
+}
+
+.press-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.press-links a,
+.press-section a {
+    color: #145148;
+    font-weight: 600;
+}
+
+.press-links a:hover,
+.press-section a:hover {
+    color: #1d6f63;
+}
+
+.press-assets {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.asset-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    padding: 12px;
+    color: #111111;
+}
+
+.asset-link img {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.asset-link span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.asset-link:focus-visible,
+.press-links a:focus-visible,
+.press-section a:focus-visible {
+    outline: 3px solid #4a9b8e;
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    .press-card {
+        padding: 24px 18px;
+    }
+
+    .press-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 560px) {
+    .press-assets {
+        grid-template-columns: 1fr;
+    }
+
+    .press-section h2 {
+        font-size: 20px;
+    }
+}

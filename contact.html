@@ -61,8 +61,10 @@
                     <a href="mailto:yahallogames@gmail.com" class="contact-link">yahallogames@gmail.com</a>
                 </div>
             </div>
-<br><br>
+
             <form id="contactInquiryForm" class="contact-form" novalidate>
+                <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" class="contact-honeypot" aria-hidden="true">
+                <input type="hidden" id="formStartedAt" name="formStartedAt" value="">
                 <div class="contact-form-row">
                     <div class="contact-form-group">
                         <label for="contactName">Name *</label>

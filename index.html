@@ -25,6 +25,35 @@
     <meta name="twitter:title" content="Yahallo Games">
     <meta name="twitter:description" content="Indie games from Myanmar: cozy, story-driven, and simulation experiences.">
     <meta name="twitter:image" content="https://yahallogames.site/Images/YahalloGamesLogo.png">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "@id": "https://yahallogames.site/#organization",
+                    "name": "Yahallo Games",
+                    "url": "https://yahallogames.site/",
+                    "logo": "https://yahallogames.site/Images/YahalloGamesLogo.png",
+                    "description": "Indie game studio from Myanmar creating cozy, story-driven, and simulation games.",
+                    "sameAs": [
+                        "https://yahallogames.itch.io/",
+                        "https://play.google.com/store/apps/dev?id=5433877889174746171",
+                        "https://store.steampowered.com/app/4205320/Grandmas_Little_Store/"
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://yahallogames.site/#website",
+                    "url": "https://yahallogames.site/",
+                    "name": "Yahallo Games",
+                    "publisher": {
+                        "@id": "https://yahallogames.site/#organization"
+                    }
+                }
+            ]
+        }
+        </script>
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
@@ -42,14 +71,14 @@
     <div class="container">
         <!-- Logo -->
         <header class="logo-section">
-            <img src="Images/YahalloGamesLogo.png" alt="Yahallo Games Logo" class="logo">
+            <img src="Images/YahalloGamesLogo.png" alt="Yahallo Games Logo" class="logo" loading="eager" fetchpriority="high" decoding="async">
         </header>
 
         <!-- Game Thumbnails Grid -->
         <section class="games-grid">
             <div class="game-card">
                 <a href="https://store.steampowered.com/app/4205320/Grandmas_Little_Store/" data-track="game_click" data-game="grandmas_little_store" data-platform="steam" target="_blank" rel="noopener noreferrer">
-                <img src="Images/Grandma'sLittleStore.png" alt="Grandma's Little Store - cozy shop simulation game" loading="lazy"></a>
+                <img src="Images/Grandma'sLittleStore.png" alt="Grandma's Little Store - cozy shop simulation game" loading="lazy" decoding="async"></a>
                 <div class="game-card-content">
                     <h3>Grandma's Little Store</h3>
                     <p>Cozy shop simulation | Steam</p>
@@ -57,7 +86,7 @@
             </div>
             <div class="game-card">
                 <a href="https://yahallogames.itch.io/work-together" data-track="game_click" data-game="work_together" data-platform="itch" target="_blank" rel="noopener noreferrer">
-                <img src="Images/WorkTogether.png" alt="Work Together - local co-op teamwork game" loading="lazy"></a>
+                <img src="Images/WorkTogether.png" alt="Work Together - local co-op teamwork game" loading="lazy" decoding="async"></a>
                 <div class="game-card-content">
                     <h3>Work Together</h3>
                     <p>Co-op challenge | Itch.io</p>
@@ -65,7 +94,7 @@
             </div>
             <div class="game-card">
                 <a href="https://yahallogames.itch.io/shadowtales-theforgottenmemories" data-track="game_click" data-game="shadow_tales" data-platform="itch" target="_blank" rel="noopener noreferrer">
-                <img src="Images/ShadowTales.png" alt="Shadow Tales: The Forgotten Memories - story adventure game" loading="lazy"></a>
+                <img src="Images/ShadowTales.png" alt="Shadow Tales: The Forgotten Memories - story adventure game" loading="lazy" decoding="async"></a>
                 <div class="game-card-content">
                     <h3>Shadow Tales</h3>
                     <p>Story adventure | Itch.io</p>
@@ -73,12 +102,45 @@
             </div>
             <div class="game-card">
                 <a href="https://yahallogames.itch.io/desktop-capybaras" data-track="game_click" data-game="desktop_capybaras" data-platform="itch" target="_blank" rel="noopener noreferrer">
-                    <img src="Images/Desktop-Capybara.png" alt="Desktop Capybaras - relaxing desktop companion" loading="lazy"></a>
+                    <img src="Images/Desktop-Capybara.png" alt="Desktop Capybaras - relaxing desktop companion" loading="lazy" decoding="async"></a>
                 <div class="game-card-content">
                     <h3>Desktop Capybaras</h3>
                     <p>Desktop companion | Itch.io</p>
                 </div>
             </div>
+        </section>
+
+        <section class="proof-section" aria-label="Studio trust signals">
+            <h2 class="proof-title">Why Players Follow Yahallo Games</h2>
+            <div class="proof-grid">
+                <article class="proof-card">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h3>4 Published Titles</h3>
+                    <p>From cozy simulations to story-driven adventures.</p>
+                </article>
+                <article class="proof-card">
+                    <i class="fa-solid fa-store"></i>
+                    <h3>3 Live Platforms</h3>
+                    <p>Steam, Itch.io, and Google Play storefront presence.</p>
+                </article>
+                <article class="proof-card">
+                    <i class="fa-solid fa-earth-asia"></i>
+                    <h3>Myanmar-Inspired Worlds</h3>
+                    <p>Cultural themes and atmosphere designed for global players.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="featured-section" aria-label="Featured title">
+            <div class="featured-content">
+                <p class="featured-label">Featured Game</p>
+                <h2>Grandma's Little Store</h2>
+                <p>Build your dream neighborhood shop in a warm, story-rich simulation experience.</p>
+            </div>
+            <a href="https://store.steampowered.com/app/4205320/Grandmas_Little_Store/" class="featured-cta" target="_blank" rel="noopener noreferrer" data-track="featured_game_click" data-game="grandmas_little_store" data-platform="steam">
+                <i class="fa-brands fa-steam"></i>
+                View on Steam
+            </a>
         </section>
 
         <!-- Action Buttons -->
@@ -102,6 +164,10 @@
             <a href="support.html" class="action-btn">
                 <i class="fa-solid fa-heart"></i>
                 Support Us
+            </a>
+            <a href="press-kit.html" class="action-btn">
+                <i class="fa-solid fa-camera-retro"></i>
+                Press Kit
             </a>
         </section>
 

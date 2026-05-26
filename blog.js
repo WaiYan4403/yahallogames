@@ -66,7 +66,7 @@ function renderBlogPost(post, currentPage) {
     return `
         <div class="blog-post-card">
             <div class="blog-post-header">
-                <img src="Images/DeveloperProfile.jpg" alt="${post.title}" class="blog-post-image">
+                <img src="Images/DeveloperProfile.jpg" alt="${post.title}" class="blog-post-image" loading="lazy" decoding="async">
                 <div style="flex: 1;">
                     <h2 class="blog-post-title">${post.title}</h2>
                     <div class="blog-post-meta">

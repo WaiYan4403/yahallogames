@@ -5,6 +5,12 @@ const loading = document.getElementById('loading');
 const messageDiv = document.getElementById('message');
 const cancelBtn = document.getElementById('cancelBtn');
 
+try {
+    ensureAdminAuth();
+} catch (error) {
+    console.error(error.message);
+}
+
 const urlParams = new URLSearchParams(window.location.search);
 const postId = urlParams.get('id');
 
@@ -47,8 +53,15 @@ async function loadPost() {
         loading.style.display = 'flex';
         form.style.display = 'none';
 
-        const response = await fetch(`${API_BASE_URL}/posts/${postId}`);
+        const response = await fetch(`${API_BASE_URL}/posts/${postId}`, {
+            headers: getAdminHeaders()
+        });
         const post = await response.json();
+
+        if (response.status === 401) {
+            handleAdminUnauthorized();
+            return;
+        }
 
         if (response.ok) {
             document.getElementById('title').value = post.title || '';
@@ -99,13 +112,18 @@ form.addEventListener('submit', async (e) => {
 
         const response = await fetch(`${API_BASE_URL}/posts/${postId}`, {
             method: 'PUT',
-            headers: {
+            headers: getAdminHeaders({
                 'Content-Type': 'application/json'
-            },
+            }),
             body: JSON.stringify(data)
         });
 
         const result = await response.json();
+
+        if (response.status === 401) {
+            handleAdminUnauthorized();
+            return;
+        }
 
         if (response.ok) {
             showMessage('Post updated successfully!', 'success');
