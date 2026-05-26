@@ -21,8 +21,83 @@
     color: #333333;
     line-height: 1.8;
     font-size: 16px;
-    margin-bottom: 30px;
+    margin-bottom: 24px;
     text-align: justify;
+}
+
+.contact-form {
+    margin-bottom: 24px;
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.contact-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 14px;
+}
+
+.contact-form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 8px;
+}
+
+.contact-form-group input,
+.contact-form-group select,
+.contact-form-group textarea {
+    padding: 12px 14px;
+    border: 1px solid #c9c9c9;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #222222;
+}
+
+.contact-form-group textarea {
+    resize: vertical;
+}
+
+.contact-form-group input:focus,
+.contact-form-group select:focus,
+.contact-form-group textarea:focus {
+    outline: 2px solid #4a9b8e;
+    outline-offset: 1px;
+    border-color: #4a9b8e;
+}
+
+.contact-form-actions {
+    margin-top: 6px;
+}
+
+.contact-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: 999px;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 11px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.contact-submit-btn:hover {
+    background-color: #2a2a2a;
+}
+
+.contact-form-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #1c5e56;
 }
 
 .contact-info {
@@ -34,14 +109,14 @@
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    font-size: 18px;
+    gap: 12px;
+    font-size: 16px;
 }
 
 .contact-item i {
     color: #000000;
-    font-size: 20px;
-    width: 24px;
+    font-size: 16px;
+    width: 20px;
     text-align: center;
 }
 
@@ -63,6 +138,10 @@
         padding: 30px 20px;
     }
 
+    .contact-form-row {
+        grid-template-columns: 1fr;
+    }
+
     .contact-title {
         font-size: 28px;
     }
@@ -72,7 +151,7 @@
     }
 
     .contact-item {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
@@ -90,7 +169,7 @@
     }
 
     .contact-item {
-        font-size: 15px;
+        font-size: 14px;
         align-items: flex-start;
         gap: 8px;
     }

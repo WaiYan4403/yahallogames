@@ -1,6 +1,32 @@
 // API Base URL is loaded from api-config.js
 // API_BASE_URL is defined in api-config.js as a global variable
 
+const BLOG_CACHE_KEY = 'yahallo_blog_cache_v1';
+
+function saveBlogCache(data) {
+    try {
+        localStorage.setItem(BLOG_CACHE_KEY, JSON.stringify({
+            timestamp: new Date().toISOString(),
+            data
+        }));
+    } catch (error) {
+        console.warn('Failed to save blog cache:', error);
+    }
+}
+
+function loadBlogCache() {
+    try {
+        const raw = localStorage.getItem(BLOG_CACHE_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || !parsed.data || !Array.isArray(parsed.data.posts)) return null;
+        return parsed;
+    } catch (error) {
+        console.warn('Failed to load blog cache:', error);
+        return null;
+    }
+}
+
 // Get current page from URL or default to 1
 function getCurrentPage() {
     const params = new URLSearchParams(window.location.search);
@@ -106,6 +132,7 @@ async function loadBlogPosts() {
         
         const data = await response.json();
         console.log('Received data:', data);
+        saveBlogCache(data);
         
         if (data.posts && data.posts.length > 0) {
             container.innerHTML = data.posts.map(post => renderBlogPost(post, currentPage)).join('');
@@ -118,7 +145,25 @@ async function loadBlogPosts() {
         }
     } catch (error) {
         console.error('Error loading blog posts:', error);
-        container.innerHTML = `<p style="color: #ff6b6b; text-align: center;">Error loading blog posts: ${error.message}</p>`;
+        const cached = loadBlogCache();
+
+        if (cached && cached.data.posts.length > 0) {
+            container.innerHTML = `
+                <p style="color: #ffd36e; text-align: center; margin-bottom: 16px;">
+                    Showing cached posts because the latest content is temporarily unavailable.
+                </p>
+                ${cached.data.posts.map(post => renderBlogPost(post, currentPage)).join('')}
+            `;
+
+            if (cached.data.pagination) {
+                paginationContainer.innerHTML = renderPagination(cached.data.pagination);
+            } else {
+                paginationContainer.innerHTML = '';
+            }
+            return;
+        }
+
+        container.innerHTML = '<p style="color: #ff6b6b; text-align: center;">Blog posts are temporarily unavailable. Please try again later.</p>';
         paginationContainer.innerHTML = '';
     }
 }

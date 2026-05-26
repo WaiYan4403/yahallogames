@@ -42,6 +42,20 @@
     text-align: justify;
 }
 
+.faq-answer a {
+    color: #1d6f63;
+    font-weight: 600;
+}
+
+.faq-answer a:hover {
+    color: #145148;
+}
+
+.faq-answer a:focus-visible {
+    outline: 3px solid #4a9b8e;
+    outline-offset: 2px;
+}
+
 /* Responsive Design for FAQs Page */
 @media (max-width: 768px) {
     .faqs-card {

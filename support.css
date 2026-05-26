@@ -47,6 +47,11 @@
     box-shadow: 0 8px 18px rgba(139, 69, 19, 0.3);
 }
 
+.buy-tea-btn:focus-visible {
+    outline: 3px solid #4a9b8e;
+    outline-offset: 2px;
+}
+
 .buy-tea-icon {
     width: 24px;
     height: 24px;

@@ -33,6 +33,13 @@
     font-size: 1rem;
 }
 
+.home-btn:focus-visible,
+.continue-reading:focus-visible,
+.pagination-links a:focus-visible {
+    outline: 3px solid #4a9b8e;
+    outline-offset: 2px;
+}
+
 /* Blog Post Card */
 .blog-post-card {
     background-color: #ffffff;
