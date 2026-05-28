@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Games | Yahallo Games</title>
+    <meta name="description" content="Browse all games by Yahallo Games.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yahallogames.site/all-games.html">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon_io/site.webmanifest">
+    <link rel="shortcut icon" href="assets/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="fontawesome-free-7.1.0-web/css/all.min.css">
+    <link rel="stylesheet" href="all-games.css">
+</head>
+<body>
+    <script>
+        if (location.protocol === "http:" && location.hostname === "yahallogames.site") {
+            location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
+        }
+    </script>
+
+    <main class="all-games-page">
+        <header class="all-games-header">
+            <div>
+                <h1>All Games</h1>
+                <p class="all-games-subtitle">Games from Yahallo Games.</p>
+            </div>
+            <a href="index.html" class="back-home-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </header>
+
+        <section class="all-games-grid" aria-label="All Yahallo games">
+            <article class="all-game-card">
+                <a href="https://store.steampowered.com/app/4205320/Grandmas_Little_Store/" target="_blank" rel="noopener noreferrer" data-track="all_games_click" data-game="grandmas_little_store" data-platform="steam">
+                    <img src="Images/Grandma'sLittleStore.png" alt="Grandma's Little Store cover" loading="lazy" decoding="async">
+                </a>
+                <div class="all-game-content">
+                    <h2>Grandma's Little Store</h2>
+                    <p class="all-game-meta">Steam</p>
+                    <p>Cozy shop simulation with story-rich progression and neighborhood charm.</p>
+                </div>
+            </article>
+
+            <article class="all-game-card">
+                <a href="https://yahallogames.itch.io/work-together" target="_blank" rel="noopener noreferrer" data-track="all_games_click" data-game="work_together" data-platform="itch">
+                    <img src="Images/WorkTogether.png" alt="Work Together cover" loading="lazy" decoding="async">
+                </a>
+                <div class="all-game-content">
+                    <h2>Work Together</h2>
+                    <p class="all-game-meta">Itch.io</p>
+                    <p>A coordination-focused co-op challenge built around timing and teamwork.</p>
+                </div>
+            </article>
+
+            <article class="all-game-card">
+                <a href="https://yahallogames.itch.io/shadowtales-theforgottenmemories" target="_blank" rel="noopener noreferrer" data-track="all_games_click" data-game="shadow_tales" data-platform="itch">
+                    <img src="Images/ShadowTales.png" alt="Shadow Tales cover" loading="lazy" decoding="async">
+                </a>
+                <div class="all-game-content">
+                    <h2>Shadow Tales</h2>
+                    <p class="all-game-meta">Itch.io</p>
+                    <p>Story-first adventure through mysterious worlds and emotional moments.</p>
+                </div>
+            </article>
+
+            <article class="all-game-card">
+                <a href="https://yahallogames.itch.io/desktop-capybaras" target="_blank" rel="noopener noreferrer" data-track="all_games_click" data-game="desktop_capybaras" data-platform="itch">
+                    <img src="Images/Desktop-Capybara.png" alt="Desktop Capybaras cover" loading="lazy" decoding="async">
+                </a>
+                <div class="all-game-content">
+                    <h2>Desktop Capybaras</h2>
+                    <p class="all-game-meta">Itch.io</p>
+                    <p>A soft desktop companion experience designed for calm ambient play.</p>
+                </div>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
