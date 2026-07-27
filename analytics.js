@@ -1,5 +1,5 @@
 (function () {
-    const measurementId = (window.GA_MEASUREMENT_ID || '').trim();
+    const measurementId = (window.GA_MEASUREMENT_ID || 'G-L9Q1SKLFL2').trim();
 
     if (!measurementId) {
         console.info('Analytics disabled: GA_MEASUREMENT_ID is not set.');
