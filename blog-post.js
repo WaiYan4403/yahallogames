@@ -139,7 +139,7 @@ function renderBlogPost(post) {
             <div class="blog-post-header">
                 <img src="Images/DeveloperProfile.jpg" alt="${post.title}" class="blog-post-image" loading="eager" decoding="async">
                 <div style="flex: 1;">
-                    <h2 class="blog-post-title">${post.title}</h2>
+                    <h1 class="blog-post-title">${post.title}</h1>
                     <div class="blog-post-meta">
                         <span class="author">${post.author}</span> posted on 
                         <span class="date">${formattedDate}</span> in 
