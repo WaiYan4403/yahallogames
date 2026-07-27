@@ -1,8 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /manage-posts
 Disallow: /manage-posts.html
+Disallow: /write-post
 Disallow: /write-post.html
+Disallow: /edit-post
 Disallow: /edit-post.html
+Disallow: /send-email
 Disallow: /send-email.html
+Disallow: /manage-inquiries
 Disallow: /manage-inquiries.html
-Sitemap: https://yahallogames.site/sitemap.xml
+Sitemap: https://yahallogames.com/sitemap.xml

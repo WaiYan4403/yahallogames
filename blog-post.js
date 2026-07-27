@@ -50,8 +50,8 @@ function updateBlogPostStructuredData(post) {
 
     const postId = post._id || '';
     const postUrl = postId
-        ? `https://yahallogames.site/blog-post.html?id=${encodeURIComponent(postId)}`
-        : 'https://yahallogames.site/blog-post.html';
+        ? `https://yahallogames.com/blog-post?id=${encodeURIComponent(postId)}`
+        : 'https://yahallogames.com/blog-post';
 
     const plainTextContent = stripHtml(post.content || '');
     const description = (post.excerpt || plainTextContent).slice(0, 280);
@@ -61,7 +61,7 @@ function updateBlogPostStructuredData(post) {
         '@type': 'BlogPosting',
         headline: post.title || 'Yahallo Games Blog Post',
         description,
-        image: 'https://yahallogames.site/Images/YahalloGamesLogo.png',
+        image: 'https://yahallogames.com/Images/YahalloGamesLogo.png',
         author: {
             '@type': 'Person',
             name: post.author || 'Yahallo Games'
@@ -71,7 +71,7 @@ function updateBlogPostStructuredData(post) {
             name: 'Yahallo Games',
             logo: {
                 '@type': 'ImageObject',
-                url: 'https://yahallogames.site/Images/YahalloGamesLogo.png'
+                url: 'https://yahallogames.com/Images/YahalloGamesLogo.png'
             }
         },
         datePublished: post.publishedAt || new Date().toISOString(),
@@ -99,8 +99,8 @@ function updateBlogPostMeta(post) {
 
     const postId = post._id || '';
     const postUrl = postId
-        ? `https://yahallogames.site/blog-post.html?id=${encodeURIComponent(postId)}`
-        : 'https://yahallogames.site/blog-post.html';
+        ? `https://yahallogames.com/blog-post?id=${encodeURIComponent(postId)}`
+        : 'https://yahallogames.com/blog-post';
     const plainTextContent = stripHtml(post.content || '');
     const description = (post.excerpt || plainTextContent || 'Read the latest post from Yahallo Games.').slice(0, 160);
     const title = `${post.title || 'Blog Post'} - Yahallo Games Blog`;
@@ -129,8 +129,8 @@ function renderBlogPost(post) {
     const formattedContent = formatContent(post.content);
     const postId = post._id || '';
     const postUrl = postId
-        ? `https://yahallogames.site/blog-post.html?id=${encodeURIComponent(postId)}`
-        : 'https://yahallogames.site/blog-post.html';
+        ? `https://yahallogames.com/blog-post?id=${encodeURIComponent(postId)}`
+        : 'https://yahallogames.com/blog-post';
     const encodedUrl = encodeURIComponent(postUrl);
     const encodedTitle = encodeURIComponent(`${post.title} - Yahallo Games Blog`);
     
@@ -229,7 +229,7 @@ function updateBackButton() {
     const page = getPageFromUrl();
     const backButton = document.getElementById('backButton');
     if (backButton) {
-        backButton.href = `blog.html?page=${page}`;
+        backButton.href = `blog?page=${page}`;
     }
 }
 

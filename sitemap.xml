@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yahallogames.site/</loc>
+    <loc>https://yahallogames.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://yahallogames.site/about.html</loc>
+    <loc>https://yahallogames.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yahallogames.site/blog.html</loc>
+    <loc>https://yahallogames.com/blog</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://yahallogames.site/contact.html</loc>
+    <loc>https://yahallogames.com/contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yahallogames.site/faqs.html</loc>
+    <loc>https://yahallogames.com/faqs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://yahallogames.site/support.html</loc>
+    <loc>https://yahallogames.com/support</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://yahallogames.site/privacy.html</loc>
+    <loc>https://yahallogames.com/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://yahallogames.site/terms.html</loc>
+    <loc>https://yahallogames.com/terms</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://yahallogames.site/press-kit.html</loc>
+    <loc>https://yahallogames.com/press-kit</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

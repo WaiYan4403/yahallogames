@@ -93,7 +93,7 @@ form.addEventListener('submit', async (e) => {
             setPublishedDateToToday();
             
             setTimeout(() => {
-                window.location.href = 'blog.html';
+                window.location.href = 'blog';
             }, 2000);
         } else {
             showMessage(result.error || 'Failed to publish post. Please try again.', 'error');

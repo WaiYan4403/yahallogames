@@ -17,7 +17,7 @@ const postId = urlParams.get('id');
 if (!postId) {
     showMessage('No post ID provided. Redirecting...', 'error');
     setTimeout(() => {
-        window.location.href = 'manage-posts.html';
+        window.location.href = 'manage-posts';
     }, 2000);
 }
 
@@ -80,7 +80,7 @@ async function loadPost() {
             showMessage(post.error || 'Failed to load post.', 'error');
             loading.style.display = 'none';
             setTimeout(() => {
-                window.location.href = 'manage-posts.html';
+                window.location.href = 'manage-posts';
             }, 2000);
         }
     } catch (error) {
@@ -129,7 +129,7 @@ form.addEventListener('submit', async (e) => {
             showMessage('Post updated successfully!', 'success');
             
             setTimeout(() => {
-                window.location.href = 'manage-posts.html';
+                window.location.href = 'manage-posts';
             }, 2000);
         } else {
             showMessage(result.error || 'Failed to update post. Please try again.', 'error');
@@ -145,7 +145,7 @@ form.addEventListener('submit', async (e) => {
 
 cancelBtn.addEventListener('click', () => {
     if (confirm('Are you sure you want to cancel? Unsaved changes will be lost.')) {
-        window.location.href = 'manage-posts.html';
+        window.location.href = 'manage-posts';
     }
 });
 

@@ -28,7 +28,7 @@ function ensureAdminAuth() {
     }
 
     if (!token) {
-        window.location.href = 'index.html';
+        window.location.href = 'index';
         throw new Error('Admin token is required.');
     }
 

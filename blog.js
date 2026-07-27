@@ -79,7 +79,7 @@ function renderBlogPost(post, currentPage) {
             <div class="blog-post-excerpt">
                 <p>${excerpt}</p>
             </div>
-            <a href="blog-post.html?id=${post._id}&page=${currentPage}" class="continue-reading">Continue Reading >></a>
+            <a href="blog-post?id=${post._id}&page=${currentPage}" class="continue-reading">Continue Reading >></a>
         </div>
     `;
 }
@@ -87,11 +87,11 @@ function renderBlogPost(post, currentPage) {
 // Render pagination
 function renderPagination(pagination) {
     const prevLink = pagination.hasPrev 
-        ? `<a href="blog.html?page=${pagination.currentPage - 1}">Previous</a>`
+        ? `<a href="blog?page=${pagination.currentPage - 1}">Previous</a>`
         : '<span style="color: #666;">Previous</span>';
     
     const nextLink = pagination.hasNext 
-        ? `<a href="blog.html?page=${pagination.currentPage + 1}">Next</a>`
+        ? `<a href="blog?page=${pagination.currentPage + 1}">Next</a>`
         : '<span style="color: #666;">Next</span>';
     
     return `

@@ -74,11 +74,11 @@ function renderPost(post) {
                 ${excerpt}
             </div>
             <div class="post-actions">
-                <a href="blog-post.html?id=${post._id}" class="action-btn view-btn" target="_blank">
+                <a href="blog-post?id=${post._id}" class="action-btn view-btn" target="_blank">
                     <i class="fa-solid fa-eye"></i>
                     View
                 </a>
-                <a href="edit-post.html?id=${post._id}" class="action-btn edit-btn">
+                <a href="edit-post?id=${post._id}" class="action-btn edit-btn">
                     <i class="fa-solid fa-edit"></i>
                     Edit
                 </a>
