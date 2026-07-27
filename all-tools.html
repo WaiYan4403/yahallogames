@@ -16,6 +16,15 @@
     <link rel="stylesheet" href="all-games.css">
 </head>
 <body>
+    <canvas id="shader"></canvas>
+    <script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.179.0/build/three.module.js"
+  }
+}
+</script>
+    <script type="module" src="script.js"></script>
     <script>
         if (location.protocol === "http:" && location.hostname === "yahallogames.site") {
             location.replace(`https://${location.host}${location.pathname}${location.search}${location.hash}`);
