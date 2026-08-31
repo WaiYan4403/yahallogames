@@ -454,6 +454,15 @@ body {
     width: 100%;
 }
 
+.mailing-list-honeypot {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 .mailing-list-input-group {
     display: flex;
     gap: 10px;

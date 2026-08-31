@@ -377,17 +377,20 @@
 
         <!-- Mailing List -->
         <section class="mailing-list-section">
-            <h2 class="mailing-list-title">Stay Updated</h2>
-            <p class="mailing-list-subtitle">Subscribe to our mailing list for game updates and news</p>
-            <form id="mailingListForm" class="mailing-list-form">
+            <h2 class="mailing-list-title">Get Development Updates</h2>
+            <p class="mailing-list-subtitle">Enter your email to receive news and development updates from Yahallo Games.</p>
+            <form id="mailingListForm" class="mailing-list-form" novalidate>
+                <input type="text" id="mailingListWebsite" name="website" tabindex="-1" autocomplete="off" class="mailing-list-honeypot" aria-hidden="true">
+                <input type="hidden" id="mailingListFormStartedAt" name="formStartedAt" value="">
                 <div class="mailing-list-input-group">
                     <label for="emailInput" class="sr-only">Email address</label>
                     <input 
                         type="email" 
                         id="emailInput" 
                         name="email" 
-                        placeholder="Enter your email address" 
+                        placeholder="your@email.com" 
                         required
+                        autocomplete="email"
                         class="mailing-list-input"
                     >
                     <button type="submit" class="mailing-list-btn">
@@ -395,7 +398,7 @@
                         Subscribe
                     </button>
                 </div>
-                <div id="mailingListMessage" class="mailing-list-message"></div>
+                <div id="mailingListMessage" class="mailing-list-message" role="status" aria-live="polite"></div>
             </form>
             <div class="legal-links">
                 <a href="privacy">Privacy</a>

@@ -3,6 +3,12 @@
 const form = document.getElementById('mailingListForm');
 const emailInput = document.getElementById('emailInput');
 const messageDiv = document.getElementById('mailingListMessage');
+const websiteInput = document.getElementById('mailingListWebsite');
+const formStartedAtInput = document.getElementById('mailingListFormStartedAt');
+
+if (formStartedAtInput) {
+    formStartedAtInput.value = Date.now().toString();
+}
 
 function trackEvent(eventName, payload) {
     if (typeof window.gtag === 'function') {
@@ -50,9 +56,16 @@ if (form) {
         hideMessage();
 
         const email = emailInput.value.trim();
+        const website = websiteInput ? websiteInput.value.trim() : '';
+        const formStartedAt = formStartedAtInput ? formStartedAtInput.value : '';
         const submitBtn = form.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
-        
+
+        if (!email) {
+            showMessage('Please enter a valid email address.', 'error');
+            return;
+        }
+
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Subscribing...';
 
@@ -61,26 +74,29 @@ if (form) {
                 throw new Error('API configuration not loaded');
             }
 
-            const response = await fetch(`${API_BASE_URL}/mailing-list/subscribe`, {
+            const response = await fetch(`${API_BASE_URL}/newsletter/subscribe`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ email })
+                body: JSON.stringify({ email, website, formStartedAt })
             });
 
             const result = await response.json();
 
-            if (response.ok) {
+            if (response.ok && result.success) {
                 trackEvent('newsletter_subscribe_success', {
                     source: 'homepage'
                 });
-                showMessage(result.message || 'Successfully subscribed!', 'success');
+                showMessage(result.message || 'Thanks! Please check your email to confirm your subscription.', 'success');
+                if (formStartedAtInput) {
+                    formStartedAtInput.value = Date.now().toString();
+                }
             } else {
                 trackEvent('newsletter_subscribe_error', {
                     source: 'homepage'
                 });
-                showMessage(result.error || 'Failed to subscribe. Please try again.', 'error');
+                showMessage(result.message || 'Failed to subscribe. Please try again.', 'error');
             }
         } catch (error) {
             console.error('Error:', error);
